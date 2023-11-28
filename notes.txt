@@ -1,0 +1,9 @@
+TODO:
+- display title, author, description, cover image for each book
+- accommodate missing or problematic data - supply placeholder images/text
+- hiding/showing additional info
+    - url, publisher, publication date, expanded description
+
+NEED TO KNOW
+how to display text blocks and images
+disclosure
