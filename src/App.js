@@ -1,5 +1,6 @@
 import "./App.css";
 import bookData from "./book-data.json";
+import { useState } from "react";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
             title={book.title}
             author={book.author}
             shortDesc={book.shortDescription}
+            url={book.url}
           />
         ))}
       </div>
@@ -20,15 +22,19 @@ function App() {
 }
 
 function DataDisplay(props) {
-  // const [expanded, setExpanded] = useState(false);
-  // const handleClick = () => {
-  //   setExpanded(!expanded);
-  // };
+  const [expanded, setExpanded] = useState(false);
+  const handleClick = () => {
+    setExpanded(!expanded);
+  };
   return (
     <div>
       <h3>{props.title}</h3>
       <p>{props.author}</p>
       <p>{props.shortDesc}</p>
+      <button onClick={handleClick}>
+        {expanded ? "show less" : "show more"}
+      </button>
+      {expanded && <p>{props.url}</p>}
     </div>
   );
 }
