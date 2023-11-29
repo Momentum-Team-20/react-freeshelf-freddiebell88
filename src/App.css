@@ -7,6 +7,10 @@ body {
     justify-content: start;
 }
 
+.book {
+    display: grid;
+    justify-items: start;
+}
 h1 {
     text-align: center;
     border-bottom: 1px solid black;
@@ -14,7 +18,8 @@ h1 {
 img {
     max-width: 20vh;
     max-height: 40vh;
-    display: block;
+    justify-self: end;
+    align-self: start;
 }
 
 button {
