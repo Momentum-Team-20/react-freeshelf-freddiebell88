@@ -1,1 +1,14 @@
+* {
+    background-color: grey;
+}
 
+.book-data {
+    border: solid pink 4px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.book {
+    border: solid blue 4px;
+}
