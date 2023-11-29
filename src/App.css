@@ -2,23 +2,22 @@
     background-color: grey;
 }
 
-.book-data {
-    border: solid pink 4px;
+body {
     display: flex;
     justify-content: start;
-    align-items: center;
-    flex-wrap: wrap;
 }
 
-.book {
-    border: solid blue 4px;
+h1 {
+    text-align: center;
+    border-bottom: 1px solid black;
 }
-
 img {
     max-width: 20vh;
     max-height: 40vh;
+    display: block;
 }
 
 button {
     border: none;
+    display: flex;
 }

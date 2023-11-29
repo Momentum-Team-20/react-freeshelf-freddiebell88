@@ -51,13 +51,16 @@ function DataDisplay(props) {
         src={props.cover ? props.cover : placeHolderImage}
         alt="book cover"
         onError={usePlaceHolder}
+        style={{ alignSelf: "right" }}
       />
       <button onClick={handleClick}>
         {expanded ? " ▼ show less" : " ▶ show more"}
       </button>
-      {expanded && <p>URL: {props.url}</p>}
       {expanded && (
         <div>
+          <p>
+            <strong>URL:</strong> {props.url}
+          </p>
           <p>
             <strong>Publiser:</strong>{" "}
             {props.publisher ? props.publisher : placeHolderText}{" "}
