@@ -37,7 +37,7 @@ function DataDisplay(props) {
       <p>{props.shortDesc}</p>
       <img className="book-cover" src={props.cover} alt="book cover" />
       <button onClick={handleClick}>
-        {expanded ? "show less" : "show more"}
+        {expanded ? " ▼ show less" : " ▶ show more"}
       </button>
       {expanded && <p>URL: {props.url}</p>}
       {expanded && <p>Publiser: {props.publisher}</p>}

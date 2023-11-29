@@ -4,6 +4,3 @@ TODO:
 - hiding/showing additional info
     - url, publisher, publication date, expanded description
 
-NEED TO KNOW
-how to display text blocks and images
-disclosure

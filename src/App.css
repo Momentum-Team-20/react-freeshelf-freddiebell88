@@ -7,8 +7,18 @@
     display: flex;
     justify-content: start;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .book {
     border: solid blue 4px;
+}
+
+img {
+    max-width: 20vh;
+    max-height: 40vh;
+}
+
+button {
+    border: none;
 }
