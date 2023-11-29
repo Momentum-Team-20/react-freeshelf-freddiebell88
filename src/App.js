@@ -13,6 +13,9 @@ function App() {
             author={book.author}
             shortDesc={book.shortDescription}
             url={book.url}
+            publisher={book.publisher}
+            date={book.publicationDate}
+            detailedDesc={book.detailedDescription}
           />
         ))}
       </div>
@@ -35,6 +38,9 @@ function DataDisplay(props) {
         {expanded ? "show less" : "show more"}
       </button>
       {expanded && <p>{props.url}</p>}
+      {expanded && <p>{props.publisher}</p>}
+      {expanded && <p>{props.date}</p>}
+      {expanded && <p>{props.detailedDesc}</p>}
     </div>
   );
 }
