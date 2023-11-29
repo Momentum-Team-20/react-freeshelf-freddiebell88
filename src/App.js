@@ -7,7 +7,11 @@ function App() {
       <h1>Freeshelf</h1>
       <div className="book-data">
         {bookData.map((book) => (
-          <DataDisplay title={book.title} />
+          <DataDisplay
+            title={book.title}
+            author={book.author}
+            shortDesc={book.shortDescription}
+          />
         ))}
       </div>
       {/* Use bookData to show books on the page*/}
@@ -23,6 +27,8 @@ function DataDisplay(props) {
   return (
     <div>
       <h3>{props.title}</h3>
+      <p>{props.author}</p>
+      <p>{props.shortDesc}</p>
     </div>
   );
 }
