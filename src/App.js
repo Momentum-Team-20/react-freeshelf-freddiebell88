@@ -9,6 +9,7 @@ function App() {
       <div className="book-data">
         {bookData.map((book) => (
           <DataDisplay
+            key={book.url}
             title={book.title}
             author={book.author}
             shortDesc={book.shortDescription}
@@ -30,19 +31,47 @@ function DataDisplay(props) {
   const handleClick = () => {
     setExpanded(!expanded);
   };
+
+  const placeHolderImage = "images/istockphoto-1147544807-612x612.jpg";
+  const placeHolderText = "Not Available";
+
+  const usePlaceHolder = (e) => {
+    e.target.src = placeHolderImage;
+  };
+
   return (
     <div className="book">
       <h3>{props.title}</h3>
-      <p>{props.author}</p>
+      <p>
+        <strong>{props.author}</strong>
+      </p>
       <p>{props.shortDesc}</p>
-      <img className="book-cover" src={props.cover} alt="book cover" />
+      <img
+        className="book-cover"
+        src={props.cover ? props.cover : placeHolderImage}
+        alt="book cover"
+        onError={usePlaceHolder}
+      />
       <button onClick={handleClick}>
         {expanded ? " ▼ show less" : " ▶ show more"}
       </button>
       {expanded && <p>URL: {props.url}</p>}
-      {expanded && <p>Publiser: {props.publisher}</p>}
-      {expanded && <p>Publication Date: {props.date}</p>}
-      {expanded && <p>Full Description: {props.detailedDesc}</p>}
+      {expanded && (
+        <div>
+          <p>
+            <strong>Publiser:</strong>{" "}
+            {props.publisher ? props.publisher : placeHolderText}{" "}
+          </p>
+          <p>
+            <strong>Publication Date:</strong>{" "}
+            {props.date ? props.date : placeHolderText}{" "}
+          </p>
+          <p>
+            <strong>Full Description:</strong>{" "}
+            {props.detailedDesc ? props.detailedDesc : placeHolderText}{" "}
+          </p>
+        </div>
+      )}
     </div>
   );
 }
