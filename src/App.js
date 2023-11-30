@@ -56,7 +56,7 @@ function DataDisplay(props) {
           <strong>{props.author}</strong>
         </p>
         <p>{props.shortDesc}</p>
-        <button onClick={handleClick}>
+        <button aria-expanded={expanded} onClick={handleClick}>
           {expanded ? " ▼ show less" : " ▶ show more"}
         </button>
         {expanded && (

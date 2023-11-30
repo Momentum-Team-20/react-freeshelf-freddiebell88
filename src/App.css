@@ -25,11 +25,8 @@ h1 {
 img {
     max-width: 10em;
     max-height: 20em;
-    grid-column: 3 / 4;
-    justify-self: end;
 }
 
 button {
     border: none;
-    display: flex;
 }
