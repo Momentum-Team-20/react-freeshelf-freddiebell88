@@ -41,40 +41,44 @@ function DataDisplay(props) {
 
   return (
     <div className="book">
-      <h3>{props.title}</h3>
-      <p>
-        <strong>{props.author}</strong>
-      </p>
-      <p>{props.shortDesc}</p>
-      <img
-        className="book-cover"
-        src={props.cover ? props.cover : placeHolderImage}
-        alt="book cover"
-        onError={usePlaceHolder}
-        style={{ alignSelf: "right" }}
-      />
-      <button onClick={handleClick}>
-        {expanded ? " ▼ show less" : " ▶ show more"}
-      </button>
-      {expanded && (
-        <div>
-          <p>
-            <strong>URL:</strong> {props.url}
-          </p>
-          <p>
-            <strong>Publiser:</strong>{" "}
-            {props.publisher ? props.publisher : placeHolderText}{" "}
-          </p>
-          <p>
-            <strong>Publication Date:</strong>{" "}
-            {props.date ? props.date : placeHolderText}{" "}
-          </p>
-          <p>
-            <strong>Full Description:</strong>{" "}
-            {props.detailedDesc ? props.detailedDesc : placeHolderText}{" "}
-          </p>
-        </div>
-      )}
+      <div>
+        <img
+          className="book-cover"
+          src={props.cover ? props.cover : placeHolderImage}
+          alt="book cover"
+          onError={usePlaceHolder}
+          style={{ alignSelf: "right" }}
+        />
+      </div>
+      <div className="book-details">
+        <h3>{props.title}</h3>
+        <p>
+          <strong>{props.author}</strong>
+        </p>
+        <p>{props.shortDesc}</p>
+        <button onClick={handleClick}>
+          {expanded ? " ▼ show less" : " ▶ show more"}
+        </button>
+        {expanded && (
+          <div>
+            <p>
+              <strong>URL:</strong> {props.url}
+            </p>
+            <p>
+              <strong>Publiser:</strong>{" "}
+              {props.publisher ? props.publisher : placeHolderText}{" "}
+            </p>
+            <p>
+              <strong>Publication Date:</strong>{" "}
+              {props.date ? props.date : placeHolderText}{" "}
+            </p>
+            <p>
+              <strong>Full Description:</strong>{" "}
+              {props.detailedDesc ? props.detailedDesc : placeHolderText}{" "}
+            </p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
